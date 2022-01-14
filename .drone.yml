@@ -1,0 +1,14 @@
+---
+kind: pipeline
+type: docker
+
+
+name: pipeline-ci-cd
+
+# Liste des steps du CI/CD
+steps:
+  - name: helloworld
+    # Quelle image execute le step (docker image + docker version (optionnel))
+    image: busybox
+    commands:
+      - echo "${DRONE_COMMIT_AUTHOR} - Run CI / CD Pipeline on Drone"
